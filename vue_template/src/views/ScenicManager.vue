@@ -229,76 +229,7 @@
         </div>
       </el-tab-pane>
 
-      <!-- 投诉管理Tab -->
-      <el-tab-pane label="用户投诉" name="complaint">
-        <div class="tab-header">
-          <p class="tab-desc"><i class="el-icon-info"></i> 查看和处理用户订单投诉，及时响应用户反馈</p>
-        </div>
-        <div class="filter-bar">
-          <el-select v-model="complaintFilterStatus" placeholder="投诉状态" clearable @change="getComplaints">
-            <el-option label="待处理" :value="0"></el-option>
-            <el-option label="处理中" :value="1"></el-option>
-            <el-option label="已解决" :value="2"></el-option>
-            <el-option label="已关闭" :value="3"></el-option>
-          </el-select>
-          <el-select v-model="complaintFilterType" placeholder="投诉类型" clearable @change="getComplaints">
-            <el-option label="商品质量" :value="1"></el-option>
-            <el-option label="服务态度" :value="2"></el-option>
-            <el-option label="物流问题" :value="3"></el-option>
-            <el-option label="虚假宣传" :value="4"></el-option>
-            <el-option label="其他" :value="5"></el-option>
-          </el-select>
-          <el-button icon="el-icon-refresh" @click="getComplaints">刷新</el-button>
-        </div>
 
-        <el-table :data="complaints" v-loading="complaintLoading" stripe class="data-table">
-          <el-table-column prop="id" label="ID" width="70"></el-table-column>
-          <el-table-column label="投诉用户" width="110">
-            <template slot-scope="scope">
-              <div class="user-cell">
-                <i class="el-icon-user"></i>
-                {{ scope.row.user?.username || '-' }}
-              </div>
-            </template>
-          </el-table-column>
-          <el-table-column prop="title" label="投诉标题" min-width="180"></el-table-column>
-          <el-table-column label="投诉类型" width="100">
-            <template slot-scope="scope">
-              <el-tag size="small" type="info">{{ getComplaintTypeText(scope.row.type) }}</el-tag>
-            </template>
-          </el-table-column>
-          <el-table-column label="关联订单" width="100">
-            <template slot-scope="scope">
-              <el-link type="primary" v-if="scope.row.orderId">#{{ scope.row.orderId }}</el-link>
-              <span v-else class="text-muted">-</span>
-            </template>
-          </el-table-column>
-          <el-table-column label="状态" width="100">
-            <template slot-scope="scope">
-              <el-tag :type="getComplaintStatusType(scope.row.status)" size="small" effect="dark">
-                {{ getComplaintStatusText(scope.row.status) }}
-              </el-tag>
-            </template>
-          </el-table-column>
-          <el-table-column label="创建时间" width="160">
-            <template slot-scope="scope">{{ formatTime(scope.row.createdAt) }}</template>
-          </el-table-column>
-          <el-table-column label="操作" width="150" fixed="right">
-            <template slot-scope="scope">
-              <el-button type="text" size="small" icon="el-icon-view"
-                @click="showComplaintDetail(scope.row)">查看</el-button>
-              <el-button type="text" size="small" icon="el-icon-s-check" v-if="scope.row.status < 2"
-                @click="showHandleComplaintDialog(scope.row)">处理</el-button>
-            </template>
-          </el-table-column>
-        </el-table>
-
-        <div class="pagination-wrapper">
-          <el-pagination background :current-page.sync="complaintCurrentPage" :page-size="complaintPageSize"
-            :total="complaintTotal" layout="total, prev, pager, next" @current-change="getComplaints">
-          </el-pagination>
-        </div>
-      </el-tab-pane>
 
       <!-- 资讯公告Tab -->
       <el-tab-pane label="资讯公告" name="news">
