@@ -1,0 +1,135 @@
+@charset "utf-8";
+ 
+*
+{
+
+	margin: 0;
+	padding: 0;
+	/* user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-webkit-backface-visibility: hidden; */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-family: '微软雅黑', sans-serif;
+
+}
+.el-button{
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, #FF9800, #FFB74D)!important;
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.el-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.el-button:active::after {
+    width: 200px;
+    height: 200px;
+}
+
+.el-button:hover {
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.el-button.is-plain {
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #FF9800;
+  background: #FFF8E1!important;
+  border: 1px solid #FFB74D;
+}
+
+.el-button.is-plain:hover {
+  background: #FFE0B2!important;
+  border-color: #FF9800;
+}
+
+.el-link--inner{
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #FF9800;
+}
+.el-message{
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 152, 0, 0.1),
+                0 4px 16px rgba(255, 152, 0, 0.08) !important;
+    background-color: #fff !important;
+}
+.el-textarea__inner{
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #FFE0B2;
+}
+
+.el-textarea__inner:focus {
+    border-color: #FF9800;
+    box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.1);
+}
+/* 重置 Element UI Message 样式 */
+.el-message {
+  top: 20px !important;
+  background-color: #fff !important;
+  border: 1px solid #FFE0B2 !important;
+  padding: 15px !important;
+  min-width: 380px !important;
+  border-radius: 12px !important;
+}
+
+.el-message__content {
+  font-size: 14px !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.el-message--success {
+  background-color: #FFF8E1 !important;
+  border-color: #FFB74D !important;
+}
+
+.el-message--warning {
+  background-color: #FFF3E0 !important;
+  border-color: #FFB74D !important;
+}
+
+.el-message--error {
+  background-color: #FFEBEE !important;
+  border-color: #FF9800 !important;
+}
+
+.el-message__icon {
+  margin-right: 10px !important;
+  font-size: 16px !important;
+}
+
+

@@ -1,0 +1,54 @@
+# =========================================================================
+# IDEs and Editors
+# =========================================================================
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+*.local
+vue_template/vue_template.iml
+
+# =========================================================================
+# Backend (Spring Boot)
+# =========================================================================
+springboot/target/
+springboot/bin/
+springboot/.apt_generated
+springboot/.classpath
+springboot/.factorypath
+springboot/.project
+springboot/.settings/
+springboot/.springBeans
+springboot/.sts4-cache
+
+# Ignore uploaded/static files generated locally in the backend
+springboot/files/img/*
+!springboot/files/img/.gitkeep
+springboot/files/videos/*
+!springboot/files/videos/.gitkeep
+
+# NetBeans
+springboot/nbproject/private/
+springboot/nbbuild/
+springboot/dist/
+springboot/nbdist/
+springboot/.nb-gradle/
+
+# =========================================================================
+# Frontend (Vue.js)
+# =========================================================================
+vue_template/node_modules/
+vue_template/dist/
+vue_template/npm-debug.log*
+vue_template/yarn-debug.log*
+vue_template/yarn-error.log*
+vue_template/pnpm-debug.log*
+vue_template/.env.local
+vue_template/.env.*.local
